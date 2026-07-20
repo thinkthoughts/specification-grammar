@@ -39,6 +39,13 @@ LAYOUT = {
     "footer_y": 960,
 }
 
+ICON = {
+    "box": 96,
+    "stroke": 3.2,
+    "radius": 42,
+    "small_radius": 8,
+}
+
 ROWS = [
     {
         "color": PALETTE["navy"],
@@ -131,7 +138,7 @@ def icon_group(dwg, color):
     return dwg.g(
         fill="none",
         stroke=color,
-        stroke_width=3,
+        stroke_width=ICON["stroke"],
         stroke_linecap="round",
         stroke_linejoin="round",
     )
@@ -139,8 +146,8 @@ def icon_group(dwg, color):
 
 def draw_doc(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    g.add(dwg.path(d=f"M {cx-28},{cy-44} H {cx+10} L {cx+28},{cy-25} V {cy+44} H {cx-28} Z"))
-    g.add(dwg.path(d=f"M {cx+10},{cy-44} V {cy-25} H {cx+28}"))
+    g.add(dwg.path(d=f"M {cx-28},{cy-43} H {cx+9} L {cx+28},{cy-24} V {cy+43} H {cx-28} Z"))
+    g.add(dwg.path(d=f"M {cx+9},{cy-43} V {cy-24} H {cx+28}"))
     for yy in (-15, 0, 15):
         g.add(dwg.line((cx - 14, cy + yy), (cx + 14, cy + yy)))
     return g
@@ -150,45 +157,49 @@ def draw_target(dwg, cx, cy, color):
     g = icon_group(dwg, color)
     for radius in (42, 24, 8):
         g.add(dwg.circle((cx, cy), r=radius))
-    g.add(dwg.line((cx - 50, cy), (cx - 32, cy)))
-    g.add(dwg.line((cx + 32, cy), (cx + 50, cy)))
-    g.add(dwg.line((cx, cy - 50), (cx, cy - 32)))
-    g.add(dwg.line((cx, cy + 32), (cx, cy + 50)))
+    for x1, y1, x2, y2 in (
+        (cx - 50, cy, cx - 32, cy),
+        (cx + 32, cy, cx + 50, cy),
+        (cx, cy - 50, cx, cy - 32),
+        (cx, cy + 32, cx, cy + 50),
+    ):
+        g.add(dwg.line((x1, y1), (x2, y2)))
     return g
 
 
 def draw_cube(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    points = [
-        (cx, cy - 48),
-        (cx + 38, cy - 25),
-        (cx + 38, cy + 25),
-        (cx, cy + 48),
-        (cx - 38, cy + 25),
-        (cx - 38, cy - 25),
-    ]
-    g.add(dwg.polygon(points))
-    g.add(dwg.line((cx, cy - 48), (cx, cy + 48)))
-    g.add(dwg.line((cx - 38, cy - 25), (cx, cy)))
-    g.add(dwg.line((cx + 38, cy - 25), (cx, cy)))
+    top = (cx, cy - 42)
+    upper_left = (cx - 36, cy - 21)
+    upper_right = (cx + 36, cy - 21)
+    bottom_left = (cx - 36, cy + 23)
+    bottom_right = (cx + 36, cy + 23)
+    bottom = (cx, cy + 44)
+    g.add(dwg.polygon([top, upper_right, bottom_right, bottom, bottom_left, upper_left]))
+    g.add(dwg.line(top, (cx, cy)))
+    g.add(dwg.line(upper_left, (cx, cy)))
+    g.add(dwg.line(upper_right, (cx, cy)))
+    g.add(dwg.line((cx, cy), bottom))
     return g
 
 
 def draw_network(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    for dx, dy in ((0, -34), (-28, 28), (28, 28)):
-        g.add(dwg.circle((cx + dx, cy + dy), r=16))
-    g.add(dwg.line((cx, cy - 18), (cx - 20, cy + 14)))
-    g.add(dwg.line((cx, cy - 18), (cx + 20, cy + 14)))
-    g.add(dwg.line((cx - 12, cy + 28), (cx + 12, cy + 28)))
+    nodes = ((cx, cy - 34), (cx - 30, cy + 26), (cx + 30, cy + 26))
+    g.add(dwg.line(nodes[0], nodes[1]))
+    g.add(dwg.line(nodes[0], nodes[2]))
+    g.add(dwg.line(nodes[1], nodes[2]))
+    for node in nodes:
+        g.add(dwg.circle(node, r=14, fill=PALETTE["background"]))
     return g
 
 
 def draw_sliders(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    for yy, xx in zip((cy - 28, cy, cy + 28), (cx + 10, cx - 20, cx + 10)):
+    rows = ((cy - 27, cx + 14), (cy, cx - 18), (cy + 27, cx + 8))
+    for yy, knob_x in rows:
         g.add(dwg.line((cx - 42, yy), (cx + 42, yy)))
-        g.add(dwg.circle((xx, yy), r=8, fill=PALETTE["background"]))
+        g.add(dwg.circle((knob_x, yy), r=8, fill=PALETTE["background"]))
     return g
 
 
@@ -203,35 +214,39 @@ def draw_gauge(dwg, cx, cy, color):
                 (cx + 42 * math.cos(theta), cy + 42 * math.sin(theta)),
             )
         )
-    g.add(dwg.line((cx, cy + 10), (cx + 24, cy - 17)))
-    g.add(dwg.circle((cx, cy + 10), r=7, fill=PALETTE["background"]))
+    g.add(dwg.line((cx, cy + 12), (cx + 23, cy - 14)))
+    g.add(dwg.circle((cx, cy + 12), r=7, fill=PALETTE["background"]))
     return g
 
 
 def draw_eye(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    g.add(dwg.path(d=f"M {cx-48},{cy} Q {cx},{cy-42} {cx+48},{cy} Q {cx},{cy+42} {cx-48},{cy} Z"))
-    g.add(dwg.circle((cx, cy), r=16))
+    g.add(dwg.path(d=f"M {cx-46},{cy} Q {cx},{cy-38} {cx+46},{cy} Q {cx},{cy+38} {cx-46},{cy} Z"))
+    g.add(dwg.circle((cx, cy), r=15))
     return g
 
 
 def draw_magnify(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    g.add(dwg.circle((cx - 8, cy - 8), r=31))
-    g.add(dwg.line((cx + 14, cy + 14), (cx + 40, cy + 40)))
+    g.add(dwg.circle((cx - 9, cy - 9), r=30))
+    g.add(dwg.line((cx + 13, cy + 13), (cx + 39, cy + 39)))
     return g
 
 
 def draw_wave(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    g.add(dwg.circle((cx, cy), r=44))
+    g.add(dwg.circle((cx, cy), r=42))
     g.add(
         dwg.path(
             d=(
-                f"M {cx-28},{cy+4} L {cx-18},{cy+4} "
-                f"L {cx-12},{cy-18} L {cx-4},{cy+20} "
-                f"L {cx+4},{cy-24} L {cx+12},{cy+10} "
-                f"L {cx+18},{cy+2} L {cx+29},{cy+2}"
+                f"M {cx-28},{cy+3} "
+                f"L {cx-18},{cy+3} "
+                f"L {cx-12},{cy-16} "
+                f"L {cx-4},{cy+18} "
+                f"L {cx+4},{cy-22} "
+                f"L {cx+12},{cy+10} "
+                f"L {cx+18},{cy+2} "
+                f"L {cx+28},{cy+2}"
             )
         )
     )
@@ -240,8 +255,8 @@ def draw_wave(dwg, cx, cy, color):
 
 def draw_check(dwg, cx, cy, color):
     g = icon_group(dwg, color)
-    g.add(dwg.circle((cx, cy), r=44))
-    g.add(dwg.path(d=f"M {cx-20},{cy} L {cx-5},{cy+16} L {cx+24},{cy-18}"))
+    g.add(dwg.circle((cx, cy), r=42))
+    g.add(dwg.path(d=f"M {cx-20},{cy} L {cx-5},{cy+15} L {cx+23},{cy-18}"))
     return g
 
 
