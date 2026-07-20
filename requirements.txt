@@ -1,0 +1,2 @@
+# No Python packages are required for the initial scaffold.
+# Inkscape is recommended for SVG-to-PNG/PDF exports.
