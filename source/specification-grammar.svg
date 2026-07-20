@@ -16,8 +16,8 @@
   <text fill="#081d4f" font-family="DejaVu Sans" font-size="25" font-weight="bold" text-anchor="start" x="480" y="207">specify</text>
   <text fill="#0b1835" font-family="DejaVu Sans" font-size="25" font-weight="normal" text-anchor="start" x="480" y="240">engineering objects.</text>
   <text fill="#081d4f" font-family="DejaVu Serif" font-size="45" font-weight="normal" style="font-style:italic" text-anchor="middle" x="900" y="212">L → O</text>
-  <text fill="#081d4f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="192">Context and</text>
-  <text fill="#081d4f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="232">Objective</text>
+  <text fill="#081d4f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="192">Context and</text>
+  <text fill="#081d4f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="232">Objective</text>
   <g fill="none" stroke="#081d4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">
     <circle cx="1410" cy="202" r="42"/>
     <circle cx="1410" cy="202" r="24"/>
@@ -41,8 +41,8 @@
   <text fill="#0b5c1e" font-family="DejaVu Sans" font-size="25" font-weight="bold" text-anchor="start" x="480" y="371">specify</text>
   <text fill="#0b1835" font-family="DejaVu Sans" font-size="25" font-weight="normal" text-anchor="start" x="480" y="404">engineering variables.</text>
   <text fill="#0b5c1e" font-family="DejaVu Serif" font-size="45" font-weight="normal" style="font-style:italic" text-anchor="middle" x="900" y="376">O → V</text>
-  <text fill="#0b5c1e" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="356">Structure and</text>
-  <text fill="#0b5c1e" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="396">Integration</text>
+  <text fill="#0b5c1e" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="356">Structure and</text>
+  <text fill="#0b5c1e" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="396">Integration</text>
   <g fill="none" stroke="#0b5c1e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">
     <line x1="1410" x2="1380" y1="332" y2="392"/>
     <line x1="1410" x2="1440" y1="332" y2="392"/>
@@ -66,8 +66,8 @@
   <text fill="#d94b00" font-family="DejaVu Sans" font-size="25" font-weight="bold" text-anchor="start" x="480" y="535">specify</text>
   <text fill="#0b1835" font-family="DejaVu Sans" font-size="25" font-weight="normal" text-anchor="start" x="480" y="568">observable states.</text>
   <text fill="#d94b00" font-family="DejaVu Serif" font-size="45" font-weight="normal" style="font-style:italic" text-anchor="middle" x="900" y="540">V → S</text>
-  <text fill="#d94b00" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="520">Constraint and</text>
-  <text fill="#d94b00" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="560">Optimization</text>
+  <text fill="#d94b00" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="520">Constraint and</text>
+  <text fill="#d94b00" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="560">Optimization</text>
   <g fill="none" stroke="#d94b00" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">
     <path d="M 1368,555 A 42,42 0 0 1 1452,555"/>
     <line x1="1382.287187078898" x2="1373.6269330410537" y1="514.0" y2="509.0"/>
@@ -89,8 +89,8 @@
   <text fill="#4a238f" font-family="DejaVu Sans" font-size="25" font-weight="bold" text-anchor="start" x="480" y="699">specify</text>
   <text fill="#0b1835" font-family="DejaVu Sans" font-size="25" font-weight="normal" text-anchor="start" x="480" y="732">measured states.</text>
   <text fill="#4a238f" font-family="DejaVu Serif" font-size="45" font-weight="normal" style="font-style:italic" text-anchor="middle" x="900" y="704">S → M</text>
-  <text fill="#4a238f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="684">Measurement and</text>
-  <text fill="#4a238f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="724">Validation</text>
+  <text fill="#4a238f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="684">Measurement</text>
+  <text fill="#4a238f" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="724">and Validation</text>
   <g fill="none" stroke="#4a238f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">
     <circle cx="1401" cy="685" r="30"/>
     <line x1="1423" x2="1449" y1="707" y2="733"/>
@@ -106,8 +106,8 @@
   <text fill="#00508c" font-family="DejaVu Sans" font-size="25" font-weight="bold" text-anchor="start" x="480" y="863">inform</text>
   <text fill="#0b1835" font-family="DejaVu Sans" font-size="25" font-weight="normal" text-anchor="start" x="480" y="896">admissible generalizations.</text>
   <text fill="#00508c" font-family="DejaVu Serif" font-size="45" font-weight="normal" style="font-style:italic" text-anchor="middle" x="900" y="868">M → G</text>
-  <text fill="#00508c" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="848">Learning and</text>
-  <text fill="#00508c" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1110" y="888">Generalization</text>
+  <text fill="#00508c" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="848">Learning and</text>
+  <text fill="#00508c" font-family="DejaVu Sans" font-size="29" font-weight="normal" text-anchor="start" x="1060" y="888">Generalization</text>
   <g fill="none" stroke="#00508c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">
     <circle cx="1410" cy="858" r="42"/>
     <path d="M 1390,858 L 1405,873 L 1433,840"/>
