@@ -1,2 +1,2 @@
-# No Python packages are required for the initial scaffold.
-# Inkscape is recommended for SVG-to-PNG/PDF exports.
+svgwrite>=1.4.3
+CairoSVG>=2.7.1
