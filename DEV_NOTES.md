@@ -55,3 +55,21 @@ than an abbreviated reference standard.
 
 Future revisions should preserve this separation of roles unless a simpler
 Specification Grammar is developed.
+
+### Engineering SVG
+
+An Engineering SVG is not just "an SVG file." It is the graphical reference standard for a concept at a given stage of refinement.
+
+That's analogous to how engineering disciplines use:
+
+a circuit diagram,
+a mechanical drawing,
+a UML class diagram,
+a process flow diagram.
+
+Those aren't illustrations. They're reference artifacts.
+
+I would define it something like this:
+
+Engineering SVG
+A versioned graphical reference standard that specifies an engineering concept through the Specification Grammar.
