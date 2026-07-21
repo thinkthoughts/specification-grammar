@@ -1,15 +1,26 @@
-## Future Development
+# Development Notes
 
-The Specification Grammar is intended to have two complementary forms:
+## 2026-07-21 — Footer and Reference Standard
 
-1. **Reference Standard**
-2. **Report Footer**
+### Observation
 
-### Reference Standard
+The Specification Grammar serves two different purposes:
 
-The complete Specification Grammar defines the engineering relationship between
-leading specifications and trailing generalizations.
+1. defining the engineering language (reference standard)
+2. concluding an engineering report (footer)
 
+These purposes should remain separate.
+
+### Decision
+
+Maintain two complementary forms.
+
+#### Reference Standard
+
+The complete Specification Grammar belongs in the repository reference
+documentation and Specification Grammar SVG.
+
+```
 Leading constraints specify connected lanes.
 
 Connected lanes specify engineering objects.
@@ -19,23 +30,19 @@ Engineering objects specify measurable states.
 Leading specifications constrain admissible generalizations.
 
 Admissible generalizations trail leading specifications.
+```
 
-The complete grammar is intended for reference documentation, repository
-standards, and the Specification Grammar SVG.
+#### Report Footer
 
-### Report Footer
-
-Individual reports and infographics conclude with a single engineering
-statement rather than repeating the complete grammar.
+Reports and infographics conclude with a single engineering statement.
 
 Preferred footer:
 
-    Admissible generalizations trail leading specifications.
+```
+Admissible generalizations trail leading specifications.
+```
 
-The footer serves as the report's concluding engineering statement rather than
-an abbreviated reference standard.
-
-### Design rationale
+### Rationale
 
 The complete grammar explains.
 
@@ -43,4 +50,8 @@ The report illustrates.
 
 The footer concludes.
 
-The same statement should not perform all three roles simultaneously.
+The footer should function as the report's final engineering statement rather
+than an abbreviated reference standard.
+
+Future revisions should preserve this separation of roles unless a simpler
+Specification Grammar is developed.
