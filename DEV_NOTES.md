@@ -73,3 +73,15 @@ I would define it something like this:
 
 Engineering SVG
 A versioned graphical reference standard that specifies an engineering concept through the Specification Grammar.
+
+### Engineering SVG
+
+An Engineering SVG is a versioned graphical reference standard.
+
+It defines the current engineering relationship for a concept using
+Specification Grammar.
+
+An Engineering SVG is intended to remain stable until a refinement is
+adopted into the reference standard.
+
+Engineering SVGs are reference artifacts rather than presentation graphics.
