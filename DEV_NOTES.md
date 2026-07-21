@@ -85,3 +85,36 @@ An Engineering SVG is intended to remain stable until a refinement is
 adopted into the reference standard.
 
 Engineering SVGs are reference artifacts rather than presentation graphics.
+
+### Generalizations vs Research; Susatinable vs Admissible
+
+## 2026-07-21 — Repository Language
+
+### Observation
+
+Engineering SVG titles identify engineering objects rather than engineering
+outputs.
+
+Examples:
+
+- Reaction Selectivity Specifies Battery Lifetime
+- Differential Sensitivity Specifies the DFS State
+- Research Integrity Specifies Sustainable Research
+
+The accompanying Engineering Statement may introduce Specification Grammar.
+
+Example:
+
+    Leading specifications constrain admissible generalizations.
+
+### Rationale
+
+Repository titles should use the language of the engineering activity or
+engineering object ("research", "battery", "state", "representation") rather
+than the resulting generalizations.
+
+Specification Grammar remains the reference language used to explain how those
+engineering objects develop admissible generalizations.
+
+This distinction helps Engineering SVG titles communicate naturally while
+preserving the precision of the reference standard.
